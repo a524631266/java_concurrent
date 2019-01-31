@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DaemonThread",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap5daemon.DaemonThread",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CreateThread",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap4_stacksize.CreateThread",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TestDesignPattern",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.design.TestDesignPattern",

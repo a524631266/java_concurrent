@@ -1,4 +1,4 @@
-package zhangll.learningplayground.concurrent.design;
+package zhangll.learningplayground.concurrent.cap3_design;
 
 @FunctionalInterface
 interface CalculateStrage {
