@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SyncTest",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap7sync.SyncTest",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QuestionTest",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap7sync.QuestionTest",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - InterruptCase",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap6method.InterruptCase",
