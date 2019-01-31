@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestThread",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap1.TestThread",
+            "projectName": "concurrent"
+        }
+    ]
+}
