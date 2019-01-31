@@ -33,10 +33,10 @@ class InterruptThread2 {
             public void run() {
                 while (true) {
                     try {
+                        // sleep监听interrupt信号 还有一种方法为wait
                         Thread.sleep(1000);
                         System.out.println("if interrupt" + this.isInterrupted());
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                         break;
                     }
@@ -48,5 +48,7 @@ class InterruptThread2 {
         System.out.println("if interrupt" + t.isInterrupted());
         t.interrupt();
         System.out.println("if interrupt" + t.isInterrupted());
+        // t.stop 不推荐使用
+        // t.stop();
     }
 }

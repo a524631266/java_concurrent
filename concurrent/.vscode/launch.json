@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - InterruptCase",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap6method.InterruptCase",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - InterruptThread2",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap6method.InterruptThread2",
