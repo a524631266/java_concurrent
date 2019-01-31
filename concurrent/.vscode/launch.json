@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SetPriorityThread",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap6method.SetPriorityThread",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MethodThread",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap6method.MethodThread",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DaemonThreadNested",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap5daemon.DaemonThreadNested",
