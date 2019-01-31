@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SynchronizeClass",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap7sync.SynchronizeClass",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SynchronizeMethod",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap7sync.SynchronizeMethod",
