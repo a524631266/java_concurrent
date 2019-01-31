@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - InterruptThread2",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap6method.InterruptThread2",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InterruptThread",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap6method.InterruptThread",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - JoinMyselfThread",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap6method.JoinMyselfThread",
