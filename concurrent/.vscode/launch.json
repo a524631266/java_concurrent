@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestRunable",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap2.TestRunable",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TestThread",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap1.TestThread",
