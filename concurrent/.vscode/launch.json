@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DaemonThreadNested",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap5daemon.DaemonThreadNested",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DaemonThread",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap5daemon.DaemonThread",
