@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RunWillKilledHook",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap10hook.RunWillKilledHook",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TestCollection",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap9selflock.TestCollection",
