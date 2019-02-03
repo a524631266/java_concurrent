@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestCollection",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap9selflock.TestCollection",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestLock",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap9selflock.TestLock",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - QuarrelQuestion",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap8deadlock.QuarrelQuestion",
