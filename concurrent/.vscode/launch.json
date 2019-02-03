@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ThreadGroupTest",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap11threadgroup.ThreadGroupTest",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UncatchedErrorThread",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap10hook.UncatchedErrorThread",

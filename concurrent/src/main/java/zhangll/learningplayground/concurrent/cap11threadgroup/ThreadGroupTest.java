@@ -1,0 +1,62 @@
+package zhangll.learningplayground.concurrent.cap11threadgroup;
+
+/**
+ * A thread group represents a set of threads. In addition, a thread group can
+ * also include other thread groups. The thread groups form a tree in which
+ * every thread group except the initial thread group has a parent.
+ * 
+ * treamgroup对象可以管理线程 同时threadgroup用来存储一棵树,也
+ * 
+ * 有父亲组,同时父亲组也有儿子组
+ */
+public class ThreadGroupTest {
+    public static void main(String[] args) {
+        // 私有构造函数是给C做调用的,默认为main 也即是 jvm初始化的时候用的
+        ThreadGroup tg1 = new ThreadGroup("t1");
+        Thread t1 = new Thread(tg1, "thread1") {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1_000);
+                        System.out.println("[" + Thread.currentThread().getName() + "] " + "thread group 1 name is :"
+                                + tg1.getName());
+                        System.out.println("[" + Thread.currentThread().getName() + "] " + "thread group 1 激活数量"
+                                + tg1.activeCount());
+                        System.out.println("tg1 父节点的信息 :" + tg1.getParent().getMaxPriority());
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        // tg1设置访问权限
+        tg1.checkAccess();
+        t1.start();
+        // 添加一个ThreadGroup2 ,内嵌一个group ,用父亲组来创建一个子组
+        ThreadGroup childtg = new ThreadGroup(tg1, "tg2");
+        Thread t2 = new Thread(childtg, "thread2") {
+            @Override
+            public void run() {
+                while (true) {
+                    ThreadGroup currentTg = this.getThreadGroup();
+                    try {
+                        Thread.sleep(1_000);
+                        System.out.println("[" + Thread.currentThread().getName() + "] " + "thread group 2 name is"
+                                + childtg.getName());
+                        System.out.println("[" + Thread.currentThread().getName() + "] " + "thread group 2 激活数量"
+                                + childtg.activeCount());
+                        // 可以获取父亲节点的一些信息,官方不太准确 ,
+                        System.out.println("获取父亲节点有多少个可以激活的线程数 :" + currentTg.getParent().activeCount());
+                        System.out.println("tg2 父节点的信息 :" + currentTg.getParent().getName());
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        t2.start();
+    }
+}
