@@ -46,4 +46,22 @@ public class MyLock implements Lock {
         return Collections.unmodifiableCollection(threadpool);
     }
 
+    @Override
+    public synchronized void lock(long misc) throws InterruptedException, TimeOutException {
+        if (misc <= 0) {
+            lock();
+        }
+        long curtime = System.currentTimeMillis();
+        while (locked) {
+            this.wait(misc);
+            // 当前时间 - 上次保留的创始时间 超过假定的延时时间就报错
+            long haswaittime = System.currentTimeMillis() - curtime;
+            if (haswaittime > misc) {
+                System.out.println(Thread.currentThread().getName() + " has wait " + haswaittime);
+                throw new TimeOutException("超时");
+            }
+        }
+        lock();
+    }
+
 }

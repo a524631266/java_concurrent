@@ -8,12 +8,18 @@ import java.util.Collection;
 public interface Lock {
     public static class TimeOutException extends Exception {
 
+        public TimeOutException(String string) {
+        }
+
         private static final long serialVersionUID = 1L;
 
     }
 
     // 用来锁住锁，结合while和wait用来存储锁
     public void lock() throws InterruptedException;
+
+    // 添加超时
+    public void lock(long misc) throws InterruptedException, TimeOutException;
 
     // 释放集合中的休眠线程
     public void unlock();
