@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SimpleThreadPool",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap12pool.SimpleThreadPool",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ThreadGroupTest",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap11threadgroup.ThreadGroupTest",
