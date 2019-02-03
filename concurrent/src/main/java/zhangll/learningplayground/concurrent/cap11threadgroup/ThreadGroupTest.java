@@ -1,5 +1,7 @@
 package zhangll.learningplayground.concurrent.cap11threadgroup;
 
+import java.util.Arrays;
+
 /**
  * A thread group represents a set of threads. In addition, a thread group can
  * also include other thread groups. The thread groups form a tree in which
@@ -8,10 +10,12 @@ package zhangll.learningplayground.concurrent.cap11threadgroup;
  * treamgroup对象可以管理线程 同时threadgroup用来存储一棵树,也
  * 
  * 有父亲组,同时父亲组也有儿子组
+ * 
+ * [1]这里非常重要的一个概念是main方法也是jvm通过反射机制开辟了一条主线程,main方法本身 也是一个拥有顶级threadgroup维护的
  */
 public class ThreadGroupTest {
     public static void main(String[] args) {
-        // 私有构造函数是给C做调用的,默认为main 也即是 jvm初始化的时候用的
+        // 私有构造函数是给C做调用的,默认为main 也即是 jvm初始化的时候用的 看[1]
         ThreadGroup tg1 = new ThreadGroup("t1");
         Thread t1 = new Thread(tg1, "thread1") {
             @Override
@@ -58,5 +62,19 @@ public class ThreadGroupTest {
             }
         };
         t2.start();
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        // api 1 枚举出 tg1中的所有线程
+        Thread[] tds = new Thread[tg1.activeCount()];
+        // 枚举出一系列线程 copy 操作
+        tg1.enumerate(tds);
+        Arrays.asList(tds).forEach(t -> {
+            System.out.println("Get the thread name is : " + t.getName());
+        });
     }
 }
