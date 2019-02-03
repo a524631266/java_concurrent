@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UncatchedErrorThread",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.concurrent.cap10hook.UncatchedErrorThread",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RunWillKilledHook",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.concurrent.cap10hook.RunWillKilledHook",
