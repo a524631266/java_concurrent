@@ -17,6 +17,8 @@ public class ThreadGroupTest {
     public static void main(String[] args) {
         // 私有构造函数是给C做调用的,默认为main 也即是 jvm初始化的时候用的 看[1]
         ThreadGroup tg1 = new ThreadGroup("t1");
+        // 设置守护意思为,其管理的线程都结束的时候 该group就会被gc回收
+        tg1.setDaemon(true);
         Thread t1 = new Thread(tg1, "thread1") {
             @Override
             public void run() {
@@ -31,6 +33,7 @@ public class ThreadGroupTest {
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
+                        break;
                     }
                 }
             }
@@ -57,6 +60,7 @@ public class ThreadGroupTest {
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
+                        break;
                     }
                 }
             }
@@ -76,5 +80,17 @@ public class ThreadGroupTest {
         Arrays.asList(tds).forEach(t -> {
             System.out.println("Get the thread name is : " + t.getName());
         });
+        // 打断所有线程 孙子线程
+        // 设置守护
+        System.err.println("tg1 是否存活" + tg1.isDestroyed());
+        tg1.interrupt();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        System.err.println("tg1 是否存活" + tg1.isDestroyed());
+
     }
 }
