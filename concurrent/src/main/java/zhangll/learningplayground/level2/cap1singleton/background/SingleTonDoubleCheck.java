@@ -3,7 +3,8 @@ package zhangll.learningplayground.level2.cap1singleton.background;
 import java.util.stream.IntStream;
 
 public class SingleTonDoubleCheck {
-    private static SingleTonDoubleCheck obj;
+    // 加volatile关键字保持内存可见性，happend-before
+    private static volatile SingleTonDoubleCheck obj;
     public Abc foo;
 
     class Abc {
