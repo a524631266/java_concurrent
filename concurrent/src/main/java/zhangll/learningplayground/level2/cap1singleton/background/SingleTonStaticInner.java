@@ -3,6 +3,14 @@ package zhangll.learningplayground.level2.cap1singleton.background;
 import java.util.stream.IntStream;
 
 public class SingleTonStaticInner {
+    // 类创建有三步骤
+    // 1. class文件加载
+    // 2. 给属性赋值，同时给静态变量设null
+    // 3. 给static变量真正赋值
+    private SingleTonStaticInner() {
+
+    }
+
     private static class innerFuntory {
         public static Object foo = new Object();
     }
