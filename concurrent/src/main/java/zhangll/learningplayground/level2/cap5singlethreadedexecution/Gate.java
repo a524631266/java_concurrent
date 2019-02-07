@@ -5,7 +5,7 @@ public class Gate {
     private String name;
     private String Address;
 
-    public void pass(String name, String Address) {
+    public synchronized void pass(String name, String Address) {
         this.count++;
         this.name = name;
         this.Address = Address;
