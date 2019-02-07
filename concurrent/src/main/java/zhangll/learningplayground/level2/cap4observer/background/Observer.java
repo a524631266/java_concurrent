@@ -1,4 +1,4 @@
-package zhangll.learningplayground.level2.cap4observer;
+package zhangll.learningplayground.level2.cap4observer.background;
 
 public interface Observer {
     // 相应继承接口的继承方法,就是做事件处理

@@ -1,4 +1,4 @@
-package zhangll.learningplayground.level2.cap4observer;
+package zhangll.learningplayground.level2.cap4observer.background;
 
 public class MainClient {
     public static void main(String[] args) {

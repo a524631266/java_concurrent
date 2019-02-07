@@ -1,4 +1,4 @@
-package zhangll.learningplayground.level2.cap4observer;
+package zhangll.learningplayground.level2.cap4observer.background;
 
 public class TwoObserver implements Observer {
     // private final Subject sub;
