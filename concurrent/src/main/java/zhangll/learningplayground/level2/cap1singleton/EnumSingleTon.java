@@ -28,7 +28,7 @@ public class EnumSingleTon {
     }
 
     public static void main(String[] args) {
-        // System.out.println(Day.FOUR);
+        System.out.println(Day.FOUR);
         IntStream.rangeClosed(0, 40).forEach((i) -> {
             new Thread("") {
                 @Override
@@ -37,6 +37,5 @@ public class EnumSingleTon {
                 }
             }.start();
         });
-
     }
 }

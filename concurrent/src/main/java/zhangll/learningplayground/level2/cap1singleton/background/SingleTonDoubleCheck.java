@@ -3,17 +3,32 @@ package zhangll.learningplayground.level2.cap1singleton.background;
 import java.util.stream.IntStream;
 
 public class SingleTonDoubleCheck {
-    private static Object obj;
+    private static SingleTonDoubleCheck obj;
+    public Abc foo;
 
-    private SingleTonDoubleCheck() {
-
+    class Abc {
+        public int age = 1;
     }
 
-    public static Object getInstance() {
-        Object objn;
+    public SingleTonDoubleCheck getObj() {
+        return obj;
+    }
+
+    private SingleTonDoubleCheck() {
+        // 很遗憾的是在获取对象的时候此时有些属性的引用还没有创建好
+        // try {
+        // Thread.sleep(200);
+        // } catch (InterruptedException e) {
+        // e.printStackTrace();
+        // }
+        foo = new Abc();
+    }
+
+    public static SingleTonDoubleCheck getInstance() {
+        SingleTonDoubleCheck objn;
         if (obj == null) {
             synchronized (SingleTonDoubleCheck.class) {
-                objn = new Object();
+                objn = new SingleTonDoubleCheck();
                 if (obj == null) {
                     obj = objn;
                 }
@@ -26,8 +41,9 @@ public class SingleTonDoubleCheck {
         IntStream.rangeClosed(0, 10).forEach(i -> new Thread(i + "") {
             @Override
             public void run() {
-                System.out.println(
-                        "[+" + Thread.currentThread().getName() + "+]" + SingleTonDoubleCheck.getInstance().hashCode());
+                System.out.println("[+" + Thread.currentThread().getName() + "+]:" + "object:"
+                        + SingleTonDoubleCheck.getInstance().hashCode() + "---abc:age+"
+                        + SingleTonDoubleCheck.getInstance().foo.age);
             }
         }.start());
     }
