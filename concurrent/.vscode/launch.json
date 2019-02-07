@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SingleTonDoubleCheck",
+            "request": "launch",
+            "mainClass": "zhangll.learningplayground.level2.cap1singleton.background.SingleTonDoubleCheck",
+            "projectName": "concurrent"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SingleTonLazy",
             "request": "launch",
             "mainClass": "zhangll.learningplayground.level2.cap1singleton.background.SingleTonLazy",
