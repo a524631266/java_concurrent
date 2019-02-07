@@ -11,6 +11,7 @@ public class SingleTonStaticInner {
 
     }
 
+    // 4.主动加载的过错才会创建、懒加载的过程
     private static class innerFuntory {
         public static Object foo = new Object();
     }
