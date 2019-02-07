@@ -4,8 +4,8 @@ public class ThreadAction extends Thread {
     // 1. 改类被设置为subject,所以需要注入观察者(方便起见,只注入一个了,不用多个)
     private ThreadObserver to;
 
-    public ThreadAction() {
-
+    public ThreadAction(ThreadObserver to) {
+        this.to = to;
     }
 
     // 3. 注入观察者ThreadObserver,行为为注入观察者的时候马上开启监控模式
