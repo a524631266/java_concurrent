@@ -1,4 +1,4 @@
-package zhangll.learningplayground.level2.singleton;
+package zhangll.learningplayground.level2.cap1singleton;
 
 import java.util.stream.IntStream;
 
